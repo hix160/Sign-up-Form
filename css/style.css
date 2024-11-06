@@ -128,7 +128,7 @@ html, body {
 
 .label_line {
     position: absolute;
-    bottom: 0;
+    bottom: 1rem;
     left: 0;
     font-size: inherit;
     padding: 1vh 2rem;
@@ -139,7 +139,7 @@ html, body {
 
 input {
     position: absolute;
-    bottom: 0;
+    bottom: 1rem;
     left: 0;
     padding: 1vh;
     border: 2px solid rgba(21, 19, 15, 0.65);
@@ -167,6 +167,23 @@ input:valid + .label_line{
 }
 
 
+
+input:focus + .label_line + .invalid_input_text,
+input:invalid + .invalid_input_text {
+    color: red; /* Show the error message in red */
+}
+
+input:valid + .label_line + .invalid_input_text {
+    color: rgba(0, 0, 0, 0); /* Hide the error message */
+}
+
+.invalid_input_text {
+    position: absolute;
+    font-size: 0.9rem;
+    bottom:0;
+    color: rgba(0, 0, 0, 0);
+    pointer-events: none;
+}
 
 .card_container footer {
     flex: 0.4;
